@@ -17,7 +17,7 @@ public class PedidoControladorRest {
 	@Autowired
 	private IPedidoDetalleService detServicio;
 	@GetMapping("pedido/mostrar-detalle/{cabecera_id}")
-	public List<ProductoDetalleDTO> credentialsByFisicHost(@PathVariable(value = "cabecera_id") final Integer cabeceraId){
+	public List<ProductoDetalleDTO> detallePedido(@PathVariable(value = "cabecera_id") final Integer cabeceraId){
 		List<PedidoDetalle> objDet = this.detServicio.getPedidoDetalleByCabeceraId(cabeceraId);
 		List<ProductoDetalleDTO> detalles = new ArrayList<>();
 		for (PedidoDetalle det : objDet) {
